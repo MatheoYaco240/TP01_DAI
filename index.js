@@ -23,4 +23,38 @@ Alumno 2
     DNI: ${Alumno2.DNI}
 `)
 
-https://kinsta.com/es/base-de-conocimiento/nodejs-fs/#:~:text=Para%20renombrar%20un%20archivo%2C%20utiliza,Renombraremos%20este%20archivo%20mediante%20programaci%C3%B3n.
+
+var parse = require('url-parse')
+ , url = parse(objeto, true);
+
+function parsearUrl(urlString){
+   try{
+    const urlObj = new URL(urlString);
+
+    const resultado = {
+        host: urlObj.protocol + '//' + urlObj.host,
+        pathname: urlObj.pathname,
+        parametros: {}
+    };
+
+    for (const [clave, valor] of urlObj.searchParams.entries()){
+        resultado.parametros[clave] = valor;
+    }
+
+    return resultado;
+   } catch(error){
+    console.error(`Ha ocurrido un error al parsear la URL "${urlString}"`)
+    return null;
+   }
+} 
+
+let objeto = parsearUrl("http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo"); 
+console.log(objeto);
+
+
+
+/* console.log(q.host); //returns 'localhost:8080'
+    console.log(q.pathname); //returns '/default.htm'
+    console.log(q.search); //returns '?year=2017&month=february'
+
+https://kinsta.com/es/base-de-conocimiento/nodejs-fs/#:~:text=Para%20renombrar%20un%20archivo%2C%20utiliza,Renombraremos%20este%20archivo%20mediante%20programaci%C3%B3n. */
