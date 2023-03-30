@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "country-to-currency": "^1.0.8"
+    "country-to-currency": "^1.0.8",
+    "url-parse": "^1.5.10"
   }
 }

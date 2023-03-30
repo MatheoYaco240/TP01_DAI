@@ -15,12 +15,12 @@ const Alumno1 = new claseAlumno.Alumno("Matheo", 42312562)
 const Alumno2 = new claseAlumno.Alumno("Sofía", 42865894)
 console.log(`  
 Alumno 1
-    Nombre: ${Alumno1.username}
-    DNI: ${Alumno1.DNI}
+Nombre: ${Alumno1.username}
+DNI: ${Alumno1.DNI}
 
 Alumno 2
-    Nombre: ${Alumno2.username}
-    DNI: ${Alumno2.DNI}
+Nombre: ${Alumno2.username}
+DNI: ${Alumno2.DNI}
 `)
 
 
@@ -28,6 +28,37 @@ const cambioDeNombre = require('./renameFile')
 // const oldName = "rename-me.txt"
 // const newName = "renamed.txt"
 // cambioDeNombre.renameFile(oldName,newName)
+
+let objeto = parsearUrl("http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo"); 
+var parse = require('url-parse')
+ , url = parse(objeto, true);
+
+function parsearUrl(urlString){
+   try{
+    const urlObj = new URL(urlString);
+
+    const resultado = {
+        host: urlObj.protocol + '//' + urlObj.host,
+        pathname: urlObj.pathname,
+        parametros: {}
+    };
+
+    for (const [clave, valor] of urlObj.searchParams.entries()){
+        resultado.parametros[clave] = valor;
+    }
+
+    return resultado;
+   } catch(error){
+    console.error(`Ha ocurrido un error al parsear la URL "${urlString}"`)
+    return null;
+   }
+} 
+
+console.log(objeto);
+
+
+
+/* https://kinsta.com/es/base-de-conocimiento/nodejs-fs/#:~:text=Para%20renombrar%20un%20archivo%2C%20utiliza,Renombraremos%20este%20archivo%20mediante%20programaci%C3%B3n. */
 
 // npm i country-to-currency - Para la instalación
 
