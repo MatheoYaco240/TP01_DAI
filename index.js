@@ -76,7 +76,13 @@ MXN --> Pesos mexicanos
 BRL --> Reales
 
 -----Países-----
-
+AR --> Argentina
+BR --> Brasil
+ES --> España
+IT --> Italia
+MX --> Mexico
+FR --> Francia
+PR --> Portugal
 
 AD: 'EUR',AE: 'AED',AF: 'AFN',AG: 'XCD',AI: 'XCD',AL: 'ALL',AM: 'AMD',AO: 'AOA',AR: 'ARS',AS: 'USD',
 AT: 'EUR',AU: 'AUD',AW: 'AWG',AX: 'EUR',AZ: 'AZN',BA: 'BAM',BB: 'BBD',BD: 'BDT',BE: 'EUR',BF: 'XOF',
